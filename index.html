@@ -20,6 +20,16 @@
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
 
+  <!--
+    Security Policies:
+    - Content-Security-Policy: Mitigates XSS and other injection attacks by restricting
+      where resources can be loaded from.
+    - Referrer-Policy: Protects user privacy by controlling how much referrer information
+      is included with requests.
+  -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://images.unsplash.com; worker-src 'self' blob:;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
