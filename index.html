@@ -31,6 +31,8 @@
 
   <title>medflow</title>
   <link rel="manifest" href="manifest.json">
+  <!-- BOLT: Preload main.dart.js with high fetchpriority to speed up initial load -->
+  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
 </head>
 <body>
   <!--
