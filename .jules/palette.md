@@ -1,0 +1,3 @@
+## 2026-04-15 - Enhancing Initial Load UX and Accessibility
+**Learning:** Adding a custom CSS loading indicator provides immediate visual feedback during Flutter's engine initialization, preventing a "blank screen" experience. For accessibility, including `role="status"` on the loading container and `lang="en"` on the `<html>` tag are essential for screen readers to correctly handle the page language and loading state.
+**Action:** Always include a theme-matched loading spinner and basic a11y tags (`lang`, `role`) in the `index.html` of Flutter Web projects to ensure a smooth and accessible first-load experience.
