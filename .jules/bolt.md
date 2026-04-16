@@ -1,3 +1,3 @@
-## 2025-04-15 - Optimizing Flutter Web Initial Load
-**Learning:** For static Flutter Web builds, initial load performance is significantly impacted by the sequential loading of `flutter_bootstrap.js` -> `main.dart.js` -> `canvaskit.wasm`. Preloading `main.dart.js` and serving CanvasKit locally reduces TTI by starting downloads earlier and eliminating external DNS lookups.
-**Action:** Always check if critical JS assets are preloaded and if large WASM dependencies like CanvasKit can be served from the same origin to reduce latency.
+## 2026-04-12 - Optimizing Flutter Web Initial Load
+**Learning:** Flutter Web by default may fetch CanvasKit from a CDN (gstatic.com), which adds DNS and connection overhead. Also, the large `main.dart.js` is often discovered late by the browser.
+**Action:** Use `useLocalCanvasKit: true` in `_flutter.buildConfig` to force local assets, and use `<link rel="preload">` with `fetchpriority="high"` for critical JS assets.
