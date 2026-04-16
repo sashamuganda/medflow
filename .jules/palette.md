@@ -1,7 +1,9 @@
-## 2025-05-14 - Loading State for Flutter Web
-**Learning:** Flutter web applications often display a blank screen while the engine and main script are loading. Providing a simple CSS-based loading indicator in the host HTML file significantly improves perceived performance and user experience.
-**Action:** Always include a lightweight loading spinner and matching background color in `index.html` for Flutter Web projects, and use the `onEntrypointLoaded` callback to remove it.
+# Palette's Journal - Critical Learnings
 
-## 2025-05-14 - Base Accessibility for Static Builds
-**Learning:** Standard Flutter web builds often omit the `lang` attribute on the `<html>` tag, which is a basic accessibility requirement for screen readers.
-**Action:** Ensure `lang="en"` (or the appropriate language code) is present in the `index.html` file.
+## 2025-04-12 - Loading Feedback for Flutter Web
+**Learning:** Users of Flutter Web often experience a "white screen" during initial engine load, which can be interpreted as a hang. A simple HTML/CSS spinner in index.html provides immediate feedback.
+**Action:** Always include a lightweight loading indicator in index.html and hook into the Flutter loader lifecycle to remove it.
+
+## 2025-04-12 - Accessibility Baseline for Flutter
+**Learning:** Screen readers cannot identify the language of a Flutter Web app if the underlying HTML lacks the lang attribute, even if the app itself is localized.
+**Action:** Ensure <html lang="en"> (or appropriate language) is set in the entry point.
