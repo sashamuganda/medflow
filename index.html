@@ -41,6 +41,7 @@
 
   <title>medflow</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
 </head>
 <body>
   <!--
@@ -51,6 +52,6 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <script src="flutter_bootstrap.js" async></script>
+  <script src="flutter_bootstrap.js" async fetchpriority="high"></script>
 </body>
 </html>
