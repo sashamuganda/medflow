@@ -1,4 +1,6 @@
-## 2025-05-14 - Defense-in-Depth Security Enhancements
-**Vulnerability:** Lack of Content Security Policy (CSP) and weak default Referrer Policy in a static Flutter Web build.
-**Learning:** Flutter Web applications often rely on external CDNs (like gstatic.com) for CanvasKit and fonts, requiring a CSP that carefully balances security with framework needs (including `unsafe-eval` and `unsafe-inline`).
-**Prevention:** Always implement a restrictive CSP and `strict-origin-when-cross-origin` referrer policy. Forcing local CanvasKit via `useLocalCanvasKit: true` in `_flutter.buildConfig` reduces the attack surface by eliminating third-party JS/WASM loads for the core engine.
+# Sentinel's Journal
+
+## 2026-04-12 - [CSP and Referrer-Policy implementation]
+**Vulnerability:** Lack of defense-in-depth security headers in the initial Flutter Web build.
+**Learning:** Flutter Web applications often require `'unsafe-inline'` and `'unsafe-eval'` in their CSP to function correctly due to how they initialize and manage the engine. Additionally, correctly naming the referrer meta tag as `name="referrer"` is critical for browser support.
+**Prevention:** Always include a robust CSP and a privacy-preserving Referrer-Policy in the base HTML of web projects.
