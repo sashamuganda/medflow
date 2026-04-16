@@ -1,3 +1,3 @@
-## 2026-04-13 - Flutter Web Initial Load Optimization
-**Learning:** Preloading `main.dart.js` with `fetchpriority="high"` significantly improves the initial load performance by starting the download as early as possible. In this specific codebase, using `useLocalCanvasKit: true` in `_flutter.buildConfig` informs the custom loader to use the local `canvaskit/` directory, avoiding external DNS lookups.
-**Action:** Always consider preloading critical assets and leveraging local dependencies for compiled Flutter Web artifacts to improve load reliability and speed.
+## 2026-04-12 - Optimizing Flutter Web Initial Load
+**Learning:** Flutter Web by default may fetch CanvasKit from a CDN (gstatic.com), which adds DNS and connection overhead. Also, the large `main.dart.js` is often discovered late by the browser.
+**Action:** Use `useLocalCanvasKit: true` in `_flutter.buildConfig` to force local assets, and use `<link rel="preload">` with `fetchpriority="high"` for critical JS assets.
