@@ -1,5 +1,9 @@
-# Palette's UX Journal
+# Palette's Journal - Critical Learnings
 
-## 2025-05-14 - Flutter Web Loading Performance
-**Learning:** Flutter Web applications often suffer from a "white screen of death" during the several seconds it takes to download 'main.dart.js' and initialize the engine. This significantly degrades the first-load experience.
-**Action:** Always implement a native HTML/CSS loading spinner in 'index.html' that is removed via the 'onEntrypointLoaded' callback in 'flutter_bootstrap.js'. This provides immediate feedback and reduces perceived latency.
+## 2025-04-12 - Loading Feedback for Flutter Web
+**Learning:** Users of Flutter Web often experience a "white screen" during initial engine load, which can be interpreted as a hang. A simple HTML/CSS spinner in index.html provides immediate feedback.
+**Action:** Always include a lightweight loading indicator in index.html and hook into the Flutter loader lifecycle to remove it.
+
+## 2025-04-12 - Accessibility Baseline for Flutter
+**Learning:** Screen readers cannot identify the language of a Flutter Web app if the underlying HTML lacks the lang attribute, even if the app itself is localized.
+**Action:** Ensure <html lang="en"> (or appropriate language) is set in the entry point.

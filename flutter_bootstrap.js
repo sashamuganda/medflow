@@ -33,19 +33,19 @@ addEventListener("message", eventListener);
 if (!window._flutter) {
   window._flutter = {};
 }
-_flutter.buildConfig = {"engineRevision":"425cfb54d01a9472b3e81d9e76fd63a4a44cfbcb","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
+_flutter.buildConfig = {"engineRevision":"425cfb54d01a9472b3e81d9e76fd63a4a44cfbcb","useLocalCanvasKit":true,"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
 _flutter.loader.load({
   serviceWorkerSettings: {
     serviceWorkerVersion: "872066514" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
   },
-  onEntrypointLoaded: async function(engineInitializer) {
-    let appRunner = await engineInitializer.initializeEngine();
-    await appRunner.runApp();
-    // Remove the loading indicator once the app has started
-    var loadingIndicator = document.getElementById('loading_indicator');
-    if (loadingIndicator) {
-      loadingIndicator.remove();
-    }
+  onEntrypointLoaded: function(engineInitializer) {
+    engineInitializer.initializeEngine().then(function(appRunner) {
+      appRunner.runApp();
+      var loading = document.getElementById("loading");
+      if (loading) {
+        loading.remove();
+      }
+    });
   }
 });
