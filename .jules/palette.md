@@ -1,3 +1,9 @@
-## 2025-05-14 - Loading Spinner for Flutter Web
-**Learning:** Adding a loading spinner in index.html and removing it via the 'onEntrypointLoaded' callback in flutter_bootstrap.js is a standard and effective UX improvement for Flutter Web projects to avoid the "blank screen" during engine initialization.
-**Action:** Always check for existing loading indicators in Flutter Web projects and implement one if missing. Ensure removal logic happens after appRunner.runApp().
+# Palette's Journal - Critical Learnings
+
+## 2025-04-12 - Loading Feedback for Flutter Web
+**Learning:** Users of Flutter Web often experience a "white screen" during initial engine load, which can be interpreted as a hang. A simple HTML/CSS spinner in index.html provides immediate feedback.
+**Action:** Always include a lightweight loading indicator in index.html and hook into the Flutter loader lifecycle to remove it.
+
+## 2025-04-12 - Accessibility Baseline for Flutter
+**Learning:** Screen readers cannot identify the language of a Flutter Web app if the underlying HTML lacks the lang attribute, even if the app itself is localized.
+**Action:** Ensure <html lang="en"> (or appropriate language) is set in the entry point.
