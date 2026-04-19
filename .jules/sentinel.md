@@ -4,3 +4,8 @@
 **Vulnerability:** Lack of defense-in-depth security headers in the initial Flutter Web build.
 **Learning:** Flutter Web applications often require `'unsafe-inline'` and `'unsafe-eval'` in their CSP to function correctly due to how they initialize and manage the engine. Additionally, correctly naming the referrer meta tag as `name="referrer"` is critical for browser support.
 **Prevention:** Always include a robust CSP and a privacy-preserving Referrer-Policy in the base HTML of web projects.
+
+## 2026-04-12 - [Consolidating and Enhancing Security Meta Tags]
+**Vulnerability:** Duplicate and inconsistent Content-Security-Policy and Referrer-Policy meta tags.
+**Learning:** Browsers enforce multiple CSP policies by intersection, meaning a resource must satisfy all of them. Duplicate tags can lead to accidental blocking of legitimate resources if they aren't perfectly aligned. Consolidating into a single, comprehensive policy is clearer and more maintainable.
+**Prevention:** Use a single, well-defined CSP and Referrer-Policy. Periodically audit security headers for duplicates or conflicts.
