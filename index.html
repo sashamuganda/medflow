@@ -16,6 +16,15 @@
   -->
   <base href="/medflow/">
 
+  <!--
+    Performance Optimization: Preload critical Flutter assets to accelerate startup.
+    - main.dart.js: The core application logic.
+    - canvaskit.wasm: The Skia-based rendering engine.
+    Using fetchpriority="high" ensures these are discovered and downloaded as early as possible.
+  -->
+  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <link rel="preload" href="canvaskit/chromium/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" fetchpriority="high">
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Medflow - Streamline your medical workflow and book appointments easily.">
@@ -27,7 +36,7 @@
     - Referrer-Policy: Protects user privacy by controlling how much referrer information
       is included with requests.
   -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://images.unsplash.com; worker-src 'self' blob:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://images.unsplash.com; worker-src 'self' blob:; base-uri 'self'; form-action 'self';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- iOS meta tags & icons -->
@@ -40,10 +49,7 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
 
   <title>medflow</title>
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com; worker-src 'self' blob:;">
   <link rel="manifest" href="manifest.json">
-  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
 </head>
 <body>
   <div id="loading" class="loading">
