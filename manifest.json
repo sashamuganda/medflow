@@ -1,11 +1,11 @@
 {
-    "name": "medflow",
-    "short_name": "medflow",
+    "name": "Medflow",
+    "short_name": "Medflow",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Streamline your medical workflow and book appointments easily.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
