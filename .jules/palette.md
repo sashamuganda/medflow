@@ -7,3 +7,7 @@
 ## 2025-04-12 - Accessibility Baseline for Flutter
 **Learning:** Screen readers cannot identify the language of a Flutter Web app if the underlying HTML lacks the lang attribute, even if the app itself is localized.
 **Action:** Ensure <html lang="en"> (or appropriate language) is set in the entry point.
+
+## 2025-05-14 - Branding Consistency and ARIA for Loading States
+**Learning:** In a Flutter Web app, the initial loading indicator in `index.html` must be accessible to screen readers using `role="status"` and a clear `aria-label`. Additionally, consistent branding (like capitalization) across `index.html` and `manifest.json` provides a more professional feel from the moment the URL is hit.
+**Action:** Always add `role="status"` and `aria-label` to the initial loading indicator. Ensure application name capitalization is consistent across all entry point metadata.
