@@ -44,6 +44,8 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com; worker-src 'self' blob:;">
   <link rel="manifest" href="manifest.json">
   <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <!-- Preload CanvasKit WASM to reduce discovery latency -->
+  <link rel="preload" href="canvaskit/chromium/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" fetchpriority="high">
 </head>
 <body>
   <div id="loading" class="loading">
