@@ -1,6 +1,6 @@
 {
-    "name": "medflow",
-    "short_name": "medflow",
+    "name": "Medflow",
+    "short_name": "Medflow",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
