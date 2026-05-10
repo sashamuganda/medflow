@@ -16,6 +16,15 @@
   -->
   <base href="/medflow/">
 
+  <!--
+    Preloading critical assets with high fetch priority reduces the time to
+    first paint and engine initialization by allowing the browser to start
+    downloading them immediately.
+  -->
+  <link rel="preload" href="canvaskit/chromium/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" fetchpriority="high">
+  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <link rel="preload" href="flutter_bootstrap.js" as="script" fetchpriority="high">
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Medflow - Streamline your medical workflow and book appointments easily.">
@@ -43,7 +52,6 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com; worker-src 'self' blob:;">
   <link rel="manifest" href="manifest.json">
-  <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
 </head>
 <body>
   <div id="loading" class="loading">
