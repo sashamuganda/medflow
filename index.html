@@ -18,35 +18,37 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Medflow - Streamline your medical workflow and book appointments easily.">
+  <meta name="description" content="PatientFlow - Streamline your medical workflow and book appointments easily.">
 
-  <!--
-    Security Policies:
-    - Content-Security-Policy: Mitigates XSS and other injection attacks by restricting
-      where resources can be loaded from.
-    - Referrer-Policy: Protects user privacy by controlling how much referrer information
-      is included with requests.
-  -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://images.unsplash.com; worker-src 'self' blob:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com https://images.unsplash.com; worker-src 'self' blob:; object-src 'none'; require-trusted-types-for 'script'; trusted-types flutter-js;">
   <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="medflow">
+  <meta name="apple-mobile-web-app-title" content="PatientFlow">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>medflow</title>
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com; worker-src 'self' blob:;">
+  <title>PatientFlow</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="canvaskit/chromium/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" fetchpriority="high">
   <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <link rel="preload" href="flutter_bootstrap.js" as="script" fetchpriority="high">
+
+  <style>
+    body { inset: 0; overflow: hidden; margin: 0; padding: 0; position: fixed; }
+    #loading { align-items: center; background-color: white; display: flex; height: 100%; justify-content: center; width: 100%; z-index: 999; }
+    .loader { border: 16px solid #f3f3f3; border-radius: 50%; border-top: 16px solid #0175C2; width: 120px; height: 120px; animation: spin 2s linear infinite; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
 </head>
 <body>
-  <div id="loading" class="loading">
+  <div id="loading" role="status" aria-label="Loading PatientFlow">
     <div class="loader"></div>
   </div>
   <!--
