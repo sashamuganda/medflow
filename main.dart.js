@@ -105276,7 +105276,7 @@ X(){return new A.a03()}}
 A.a03.prototype={
 B(a){var s,r,q=this,p=null,o=q.d?"Check Your Inbox":"Reset Your Password"
 o=A.j(o,p,p,p,p,A.i(a).ok.c,p,p,p)
-s=q.d?"We've sent a password reset link to amara.okonkwo@gmail.com. Please check your email and follow the instructions.":"Enter your registered email or phone number. We'll send you a link to reset your password."
+s=q.d?"We've sent a password reset link to your email. Please check your email and follow the instructions.":"Enter your registered email or phone number. We'll send you a link to reset your password."
 r=t.p
 s=A.b([B.a6,o,B.p,A.j(s,p,p,p,p,A.i(a).ok.z,p,p,p),B.ar],r)
 if(!q.d)B.b.T(s,A.b([B.a86,B.bu,A.ca(p,p,"Send Reset Link",new A.aBZ(q))],r))
