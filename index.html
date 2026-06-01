@@ -44,9 +44,32 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://www.gstatic.com https://fonts.gstatic.com; worker-src 'self' blob:;">
   <link rel="manifest" href="manifest.json">
   <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background-color: white;
+    }
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 6px solid #e0e0e0;
+      border-top: 6px solid #0175C2;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <div id="loading" class="loading">
+  <div id="loading" class="loading" role="status" aria-busy="true" aria-label="Loading application">
     <div class="loader"></div>
   </div>
   <!--
