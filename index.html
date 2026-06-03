@@ -41,7 +41,12 @@
 
   <title>medflow</title>
   <link rel="manifest" href="manifest.json">
+  <!-- Preload critical assets to reduce discovery offset and improve TTI -->
   <link rel="preload" href="main.dart.js" as="script" fetchpriority="high">
+  <link rel="preload" href="flutter_bootstrap.js" as="script" fetchpriority="high">
+  <link rel="preload" href="canvaskit/chromium/canvaskit.js" as="script" fetchpriority="high">
+  <link rel="preload" href="canvaskit/chromium/canvaskit.wasm" as="fetch" crossorigin="anonymous" fetchpriority="high">
+  <link rel="preload" href="https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2" as="font" type="font/woff2" crossorigin="anonymous" fetchpriority="high">
 </head>
 <body>
   <div id="loading" class="loading">
