@@ -16,6 +16,10 @@
   -->
   <base href="/medflow/">
 
+  <!-- Bolt: Preload CanvasKit WASM to start downloading it immediately,
+       reducing the delay before the Flutter engine can initialize. -->
+  <link rel="preload" href="canvaskit/canvaskit.wasm" as="fetch" type="application/wasm" crossorigin="anonymous" fetchpriority="high">
+
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="Medflow - Streamline your medical workflow and book appointments easily.">
